@@ -26,7 +26,9 @@ class User(db.Model):
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    from account_tests import fire
+    name = fire.call()
+    return render_template('index.html', name=name)
 
 
 # https://myaccount.google.com/u/3/lesssecureapps?pli=1&rapt=AEjHL4MpjjYh8Z-01vJ5GRsQXICYQsXHG0PweSjWenlbAJfes6qNKbHKs_CfCVh0d5qUO58qFeeB0sYCbA3GANLf-965469dVA
