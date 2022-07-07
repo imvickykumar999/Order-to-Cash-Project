@@ -19,11 +19,27 @@
           </h2>
         {% else %}
 
-          <a href="{{ url_for('logout', username=username) }}">
-            <h2 style="color:red;">
-              Customer Tracking Dashboard
+          <a href="#demo" data-toggle="collapse">
+            <h1 style="color: green;">
+              Hi 
+              <span style="color: red;">
+                {{username}} !
+              </span>
+            </h1>
+
+            <h2>
+              Welcome to Order Tracking Page
             </h2>
           </a>
+
+          <div id="demo" class="collapse">
+            <br><br>
+            <a href="{{ url_for('logout', username=username) }}">
+              <h3>
+                Click me to Logout
+              </h3>
+            </a>
+          </div>
 
         {% endif %}
         <br>
