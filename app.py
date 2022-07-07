@@ -26,10 +26,7 @@ class User(db.Model):
 
 @app.route('/')
 def index():
-    from account_tests import fire
-    name = fire.call()
-    return render_template('index.html', name=name)
-
+    return render_template('index.html')
 
 # https://myaccount.google.com/u/3/lesssecureapps?pli=1&rapt=AEjHL4MpjjYh8Z-01vJ5GRsQXICYQsXHG0PweSjWenlbAJfes6qNKbHKs_CfCVh0d5qUO58qFeeB0sYCbA3GANLf-965469dVA
 
@@ -44,7 +41,7 @@ def create_db():
     db.create_all()
 
 
-# @app.route("/signup/", methods=["GET", "POST"])    # ( No signup allowed )
+@app.route("/signup/", methods=["GET", "POST"])    # ( No signup allowed )
 def signup():
     if request.method == "POST":
         username = request.form['username']
@@ -89,53 +86,52 @@ def login():
 
         if user and check_password_hash(user.pass_hash, password):
             session[username] = True
-            return redirect(url_for("user_home", username=username))
+            if username == '0':
+                return redirect(url_for("user_home", username=username))
+            else:
+                return redirect(url_for("fetch_history", username=username))
         else:
             flash("Invalid username or password.")
     return render_template("login_form.html")
+
+
+
+# username should be worksheet id...
+@app.route("/fetch_history/<username>")
+def fetch_history(username):
+
+    if not session.get(username):
+        return redirect(url_for("login"))
+
+    from account_tests import fire
+    cust = fire.call()
+    print(cust)
+    
+    from account_tests import KhataBook_by_ID as kid
+    obj = kid.flask_sheet()
+
+    for i in cust:
+        obj.add_cust(i)
+
+    return render_template("fetch_history.html",
+                            username=username,
+                            fetch=obj.fetch(int(username)),
+                          )
 
 
 @app.route("/user/<username>")
 def user_home(username):
     if not session.get(username):
         return redirect(url_for("login"))
-    return render_template("user_home.html",
-                            username=username,
-                            m_get=True,
-                            cid=None,
-                          )
-
-
-@app.route("/fetch_history/<username>")
-def fetch_history(username):
-    if not session.get(username):
-        abort(401)
-
-    from account_tests import KhataBook_by_ID as kid
-    obj = kid.flask_sheet()
-    return render_template("fetch_history.html",
-                            username=username,
-                            fetch=obj.fetch(0),
-                          )
-
-
-@app.route("/update/<username>", methods=["GET", "POST"])
-def update(username):
-    if request.method == "POST":
-        if not session.get(username):
-            abort(401)
-
-        cust = request.form['cust']
-        from account_tests import KhataBook_by_ID as kid
-
-        obj = kid.flask_sheet()
-        obj.add_cust(cust)
-        return render_template("fetch_history.html", 
+    
+    if username == '0':
+        return render_template("user_home.html",
                                 username=username,
-                                fetch=obj.fetch(0),
-                                )
+                                m_get=True,
+                                cid=None,
+                            )
     else:
-        return render_template('404.html')
+        redirect(url_for("fetch_history", username=username))
 
 
 @app.route("/account/<username>", methods=["GET", "POST"])

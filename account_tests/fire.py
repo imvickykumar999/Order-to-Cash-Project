@@ -1,9 +1,10 @@
 
 def call():
     from firebase_admin import credentials
-    cred = credentials.Certificate('account_tests/credentials.json')
+    # cred = credentials.Certificate('orderfullfillment-38232-firebase-adminsdk-wrsqu-73d0e5de66.json')
+    cred = credentials.Certificate('account_tests/orderfullfillment-38232-firebase-adminsdk-wrsqu-73d0e5de66.json')
 
-    url = 'https://neosalpha-999-default-rtdb.firebaseio.com/'
+    url = 'https://orderfullfillment-38232-default-rtdb.firebaseio.com/'
     path = {'databaseURL' : url}
 
     import firebase_admin
@@ -13,10 +14,10 @@ def call():
         firebase_admin.initialize_app(cred, path)
 
     from firebase_admin import db
-    refv = db.reference('mydatabase/views')
+    refv = db.reference('Products')
 
     name = refv.get()
-    name = name + 1
-
-    refv.set(name)
     return name
+
+# got_it = call()
+# print(got_it.keys())

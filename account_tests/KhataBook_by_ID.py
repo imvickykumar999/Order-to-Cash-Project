@@ -21,7 +21,7 @@ class flask_sheet:
 
 
     def mark(self, attend, sheet_id,
-                 top = ['Purchased Date', 'Objects', 'Cost']):
+                 top = ['Shipping Date', 'Location Reached', 'Delivery Charge']):
         
         import datetime
         dt = datetime.datetime.now()

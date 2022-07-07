@@ -11,62 +11,52 @@
   </head>
   <body>
     <center>
-      <form action="{{ url_for('update', username=username) }}" method="post">
-
-        <div class="alert alert-success" role="alert">
-          <br>
+      <div class="alert alert-success" role="alert">
+        <br>
+        {% if username == '0' %}
           <h2 style="color:red;">
-            Write Customer Name
-          </h2> 
+            Admin Shipping Dashboard
+          </h2>
+        {% else %}
 
-          <h4 style="color:blue;">
-            ... to Add User
-          </h4>
+          <a href="{{ url_for('logout', username=username) }}">
+            <h2 style="color:red;">
+              Customer Tracking Dashboard
+            </h2>
+          </a>
+
+        {% endif %}
+        <br>
+      </div>
+
+      {% for i in fetch[:-1] %}
+        <br>
+        <div class="alert alert-warning" role="alert">
 
           <br>
-          <input type="text" 
-          placeholder="then, press add button"
-          name="cust" required>
+          <table>
+            {% for key, value in i.items() %}
+              <tr>
 
-          <br><br>
-          <input type="image"
-            src="../static/add.png"
-            width="200"
-            height="70"
-            alt="submit"/>
-          <br><br>
+                <td>
+                  <div class="alert alert-success" role="alert">
+                    <h5>{{ key }}</h5>
+                  </div>
+                </td>
+
+                <td>
+                  <div class="alert alert-danger" role="alert">
+                    <h5>{{ value }}</h5>
+                  </div>
+                </td>
+
+              </tr>
+            {% endfor %}
+          </table>
+
         </div>
-
-        {% for i in fetch[:-1] %}
-          <br>
-          <div class="alert alert-warning" role="alert">
-
-            <br>
-            <table>
-              {% for key, value in i.items() %}
-                <tr>
-
-                  <td>
-                    <div class="alert alert-success" role="alert">
-                      <h5>{{ key }}</h5>
-                    </div>
-                  </td>
-
-                  <td>
-                    <div class="alert alert-danger" role="alert">
-                      <h5>{{ value }}</h5>
-                    </div>
-                  </td>
-
-                </tr>
-              {% endfor %}
-            </table>
-
-          </div>
-          <br>
-        {% endfor %}
-
-      </form>
+        <br>
+      {% endfor %}
     </center>
   </body>
 </html>
