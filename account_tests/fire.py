@@ -1,10 +1,9 @@
 
 from firebase_admin import credentials
 
-# cred = credentials.Certificate('orderfullfillment-38232-firebase-adminsdk-wrsqu-73d0e5de66.json')
-cred = credentials.Certificate('account_tests/orderfullfillment-38232-firebase-adminsdk-wrsqu-73d0e5de66.json')
+cred = credentials.Certificate('account_tests/neosalpha-999-firebase-adminsdk-ieub5-79247029d5.json')
 
-url = 'https://orderfullfillment-38232-default-rtdb.firebaseio.com/'
+url = 'https://neosalpha-999-default-rtdb.firebaseio.com/'
 path = {'databaseURL' : url}
 
 import firebase_admin
