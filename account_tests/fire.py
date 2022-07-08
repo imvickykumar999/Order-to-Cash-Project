@@ -2,6 +2,7 @@
 from firebase_admin import credentials
 
 cred = credentials.Certificate('account_tests/neosalpha-999-firebase-adminsdk-ieub5-79247029d5.json')
+# cred = credentials.Certificate('neosalpha-999-firebase-adminsdk-ieub5-79247029d5.json')
 
 url = 'https://neosalpha-999-default-rtdb.firebaseio.com/'
 path = {'databaseURL' : url}
