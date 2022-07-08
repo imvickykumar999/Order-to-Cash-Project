@@ -27,13 +27,19 @@ def call():
 # def sample():
 #     import random
 
-#     for j in range(4):
-#         for i in range(3):
-#             UID = random.randint(1000,9999)
+#     for j in range(3):
+#         for i in range(2):
 #             pincode = random.randint(100000,999999)
+#             PID = random.randint(10000,99999)
+#             dit = random.randint(1000,9999)
 
-#             data = {'details': {'count': random.randint(10,99), 'product_id': f'{random.randint(10000,99999)}'}, 'location': {'city': 'Noida', 'pin': pincode, 'state': 'UP'}}
-#             refv = db.reference(f'Products/{UID}')
+#             data = {'details': {'count': random.randint(10,99), 'product_id': f'{PID}'}}
+#             refv = db.reference(f'Inventory/{dit}')
+#             refv.set(data)
+
+#             data = {'details': {'count': random.randint(10,99), 'product_id': f'{PID}'},
+#                      'location': {'city': 'Noida', 'pin': pincode, 'state': 'UP'}}
+#             refv = db.reference(f'Products/{dit}')
 #             refv.set(data)
 
 #     refv = db.reference(f'Products')

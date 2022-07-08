@@ -92,7 +92,7 @@ class flask_sheet:
         try:
             worksheet = self.sheet.add_worksheet(title = cust, rows="100", cols="20")
             attend = [cust, worksheet.id]
-            top = ['Joining Date', 'Customer Name', 'Worksheet ID']
+            top = ['Shipping Date', 'Customer ID @ PINCODE', 'Worksheet ID']
             self.mark(attend, 0, top)
             return worksheet.id
         

@@ -111,7 +111,7 @@ def fetch_history(username):
     obj = kid.flask_sheet()
 
     for i in cust:
-        obj.add_cust(i)
+        obj.add_cust(f"{i} @ {cust[i]['location']['pin']}")
 
     return render_template("fetch_history.html",
                             username=username,

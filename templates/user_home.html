@@ -49,7 +49,7 @@
                 <br>
                 <div class="alert alert-warning" role="alert">
                   <br>
-                  <h4>Product Name</h4>  
+                  <h4>Location Shipped</h4>  
                   <input type="text" name="product" required>
                   <br><br>
                 </div>
@@ -57,7 +57,7 @@
                 <br>
                 <div class="alert alert-warning" role="alert">
                   <br>
-                  <h4>Total Cost</h4>
+                  <h4>Shipping Cost</h4>
                   <input type="text" name="cost" required>
                   <br><br>
                 </div>
@@ -65,7 +65,7 @@
                 <br>
                 <div class="alert alert-warning" role="alert">
                   <br>
-                  <h4>Customer ID</h4>
+                  <h4>Worksheet ID</h4>
                   <input type="text" name="cid" required>
                   <br><br>
                   <!-- <input type="submit" id="submit" text="Login" /> -->
@@ -81,54 +81,20 @@
                 <br><br>
               </div>
 
-              <br>
               {% with messages = get_flashed_messages() %}
                 {% if messages %}
                   <h1>
                     <em>
-                      Last Purchase ...
+                      Download Excel File
                     </em>
                   </h1>
 
                   <a href="https://docs.google.com/spreadsheets/d/1aJqW6A_rVdK7bfeX2Lb8O22xztbDFZw29yLwSc3ekUE/export?format=xlsx&gid={{cid}}">
                     ( Click me to Download excel file for {{cid}} )
                   </a>
-
-                  <br><br>
-                  <div class="alert alert-primary" role="alert">
-                    {% for message in messages %}
-                      <h3 style="color: red;">
-                        <strong>
-                          {{ message }}
-                        </strong>
-                      </h3>
-                    {% endfor %}
-                  </div>
-
+                  <br>
                 {% endif %}
               {% endwith %}
-              
-              {% if not m_get %}
-              <br>
-                <div class="alert alert-warning" role="alert">
-                  <br>
-
-                  <table>
-                    {% for key, value in fetch[-1].items() %}
-                      <tr>
-
-                        <td>
-                          <div class="alert alert-danger" role="alert">
-                            <h5>{{ value }}</h5>
-                          </div>
-                        </td>
-        
-                      </tr>
-                    {% endfor %}
-                  </table>
-
-                </div>
-              {% endif %}
 
               <br>
               <div class="alert alert-danger" role="alert">
