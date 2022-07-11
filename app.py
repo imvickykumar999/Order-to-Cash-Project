@@ -95,8 +95,6 @@ def login():
     return render_template("login_form.html")
 
 
-
-# username should be worksheet id...
 @app.route("/fetch_history/<username>")
 def fetch_history(username):
 
@@ -105,7 +103,6 @@ def fetch_history(username):
 
     from account_tests import fire
     cust = fire.call()
-    print(cust)
     
     from account_tests import KhataBook_by_ID as kid
     obj = kid.flask_sheet()
@@ -115,7 +112,36 @@ def fetch_history(username):
 
     return render_template("fetch_history.html",
                             username=username,
-                            fetch=obj.fetch(int(username)),
+                            fetch=obj.fetch(int(username))[:-1],
+                          )
+
+@app.route("/filtered/<username>", methods=["GET", "POST"])
+def filtered(username):
+
+    if not session.get(username):
+        return redirect(url_for("login"))
+
+    from account_tests import fire
+    cust = fire.call()
+    
+    from account_tests import KhataBook_by_ID as kid
+    obj = kid.flask_sheet()
+
+    for i in cust:
+        obj.add_cust(f"{i} @ {cust[i]['location']['pin']}")
+
+    fetched = obj.fetch(int(username))
+    pincode = request.form['pincode']
+    fil=[]
+
+    for i in fetched[:-1]:
+        rows = i['Customer ID @ PINCODE']
+        if pincode == rows.split('@ ')[1]:
+            fil.append(i)
+
+    return render_template("fetch_history.html",
+                            username=username,
+                            fetch=fil,
                           )
 
 

@@ -11,13 +11,39 @@
   </head>
   <body>
     <center>
-      <div class="alert alert-success" role="alert">
-        <br>
-        {% if username == '0' %}
-          <h2 style="color:red;">
-            Admin Shipping Dashboard
-          </h2>
-        {% else %}
+      <form action="/filtered/{{username}}" method="post">
+        
+        <div class="alert alert-warning" role="alert">
+          <br>
+          {% if username == '0' %}
+            <h2 style="color:red;">
+              Admin Shipping Dashboard
+            </h2>
+
+            <br>
+            <div class="alert alert-danger" role="alert">
+              <a href="#filter" data-toggle="collapse">
+                <h3 style="color: red;">
+                  Filter by PINCODE
+                </h3>
+              </a>
+    
+              <div id="filter" class="collapse">
+                <br>
+                <h4>Enter PINCODE</h4>
+                <input type="text" name="pincode" required>
+                <br><br>
+        
+                <br>
+                <input type="image"
+                  src="../static/submit.png"
+                  width="200"
+                  height="60"
+                  alt="submit"/>
+                <br>
+              </div>
+            </div>
+          {% else %}
 
           <a href="#demo" data-toggle="collapse">
             <h1 style="color: green;">
@@ -41,38 +67,41 @@
             </a>
           </div>
 
-        {% endif %}
-        <br>
-      </div>
-
-      {% for i in fetch[:-1] %}
-        <br>
-        <div class="alert alert-warning" role="alert">
-
+          {% endif %}
           <br>
-          <table>
-            {% for key, value in i.items() %}
-              <tr>
-
-                <td>
-                  <div class="alert alert-success" role="alert">
-                    <h5>{{ key }}</h5>
-                  </div>
-                </td>
-
-                <td>
-                  <div class="alert alert-danger" role="alert">
-                    <h5>{{ value }}</h5>
-                  </div>
-                </td>
-
-              </tr>
-            {% endfor %}
-          </table>
-
         </div>
+
         <br>
-      {% endfor %}
+        {% for i in fetch %}
+          <br>
+          <div class="alert alert-warning" role="alert">
+
+            <br>
+            <table>
+              {% for key, value in i.items() %}
+                <tr>
+
+                  <td>
+                    <div class="alert alert-success" role="alert">
+                      <h5>{{ key }}</h5>
+                    </div>
+                  </td>
+
+                  <td>
+                    <div class="alert alert-danger" role="alert">
+                      <h5>{{ value }}</h5>
+                    </div>
+                  </td>
+
+                </tr>
+              {% endfor %}
+            </table>
+
+          </div>
+          <br>
+        {% endfor %}
+
+      </form>
     </center>
   </body>
 </html>

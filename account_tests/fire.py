@@ -28,8 +28,8 @@ def call():
 #     import random
 
 #     for j in range(3):
+#         pincode = random.randint(100000,999999)
 #         for i in range(2):
-#             pincode = random.randint(100000,999999)
 #             PID = random.randint(10000,99999)
 #             dit = random.randint(1000,9999)
 
