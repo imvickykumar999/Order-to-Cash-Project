@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
+     <!-- firebase -->
+     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            Admin Panel</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="home.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="dashboard.html">Dashboard</a>
+              </li>
+            
+            </ul>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              </form>
+
+              <img src="image.PNG" alt="" class="avatar">
+          </div>
+        </div>
+      </nav>
+      <!-- Main Page -->
+
+      <div id="info">
+        <button onClick=print()>
+          check Availability
+        </button>
+
+      </div>
+
+      <div id="up">
+        <button onclick=update()>
+        update
+        </button>
+      </div>
+
+      <script>
+
+        var firebaseConfig = {
+        apiKey: "AIzaSyBhluvr3xwT3Tddr_FhCdk5juh19CAO6LE",
+        authDomain: "orderfullfillment-38232.firebaseapp.com",
+        projectId: "orderfullfillment-38232",
+        databaseURL: "https://orderfullfillment-38232-default-rtdb.firebaseio.com",
+        storageBucket: "orderfullfillment-38232.appspot.com",
+        messagingSenderId: "228731063649",
+        appId: "1:228731063649:web:0675718439b44784f00920"
+      };
+
+      firebase.initializeApp(firebaseConfig);
+
+      database = firebase.database();
+
+      var ref = database.ref("Products/4961");
+      ref.on("value", gotData);
+
+      var reff = database.ref("Inventory/4961");
+      reff.on("value", gotdata);
+
+      var show,notshow;
+
+      function gotData(data){
+
+        var scores = data.val();
+        show = scores.details.count;
+      }
+
+      function gotdata(data){
+        var scores = data.val();
+        notshow = scores.details.count;
+        console.log(notshow);
+      }
+      
+      function print() {
+        if(show > notshow){
+          console.log("checking");
+          alert("you can't purchase more than "+ notshow +" products");
+          function sendEmail() {
+            Email.send({
+              Host : "smtp.gmail.com",
+              Username : "username",
+              Password : "password",
+              To : 'asdf@gmail.com',
+              Subject : "Regarding Cancillation of your order",
+              Body : "Order canceled due to out of stock"
+            }).then(
+              message => alert(message)
+            );
+          }
+        }
+        else {
+          
+        }
+      }
+
+      function update() {
+        firebase.database().ref('Inventory').set({
+          a1234 : notshow-show,
+        });
+        console.log("success")
+
+      }
+
+      export default show;
+
+      </script>
+
+</body>
+</html>
