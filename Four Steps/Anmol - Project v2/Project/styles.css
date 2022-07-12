@@ -1,0 +1,28 @@
+.filter{
+    margin-left: 1200px;
+}
+.invoiceList{
+    border: 5px solid;
+    margin: 5px 5px;
+    align-items: center;    
+}
+.basicDetails{
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+}
+.orderID{
+    margin-right: 10px;
+    margin-left: 10px;
+}
+.status{
+    margin-right: 30px;
+    margin-left: 30px;
+}
+.date{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.detailButton{
+    margin-top: 10px;
+}

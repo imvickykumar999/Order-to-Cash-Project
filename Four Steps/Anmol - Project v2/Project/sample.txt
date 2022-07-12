@@ -1,0 +1,107 @@
+
+
+      
+      // <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+      // <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+      // <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+
+      // <script id="MainScript">
+        
+      //   var firebaseConfig = {
+      //     apiKey: "AIzaSyAXCasW_DbZl5kNx0NNLUgpIQIZjzO3JSE",
+      //     authDomain: "customerinvoice-810e7.firebaseapp.com",
+      //     databaseURL: "https://customerinvoice-810e7-default-rtdb.firebaseio.com",
+      //     projectId: "customerinvoice-810e7",
+      //     storageBucket: "customerinvoice-810e7.appspot.com",
+      //     messagingSenderId: "444178388269",
+      //     appId: "1:444178388269:web:552fdfebdabdb46ff0afa4"
+      //   };
+
+      //   var firebaseConfig2 = {
+      //     apiKey: "AIzaSyBhluvr3xwT3Tddr_FhCdk5juh19CAO6LE",
+      //     authDomain: "orderfullfillment-38232.firebaseapp.com",
+      //     projectId: "orderfullfillment-38232",
+      //     databaseURL: "https://orderfullfillment-38232-default-rtdb.firebaseio.com",
+      //     storageBucket: "orderfullfillment-38232.appspot.com",
+      //     messagingSenderId: "228731063649",
+      //     appId: "1:228731063649:web:0675718439b44784f00920"
+      //   };
+      
+      //   firebase.initializeApp(firebaseConfig);
+        
+      //   console.log("Firebase connected successfully");
+      //   function addItemToDiv(id, status, date, orderTotal, shippingAddress,  pincode){
+      //     var info = document.getElementById("info") 
+
+      //     var _id = document.createElement('h6'); 
+      //     var _status = document.createElement('h6');
+      //     var _date = document.createElement('h6');
+      //     var _orderTotal = document.createElement('h6');
+      //     var _shippingAddress = document.createElement('h6');
+      //     var _pincode = document.createElement('h6');
+      //     var hr = document.createElement("hr");
+
+      //     _id.innerHTML = "Id: " + id;
+      //     _status.innerHTML= "status: "+ status;
+      //     _date.innerHTML = "date: "+ date;
+      //     _orderTotal.innerHTML = "Total: " + orderTotal;
+      //     _shippingAddress.innerHTML = "Shipped To: " + shippingAddress;
+      //     _pincode.innerHTML = "Pincode: " + pincode;
+
+      //     info.appendChild(_id);
+      //     info.appendChild(_status);
+      //     info.appendChild(_date);
+      //     info.appendChild(_orderTotal);
+      //     info.appendChild(_shippingAddress);
+      //     info.appendChild(_pincode);
+      //   }
+
+      //   function FetchAllData(){
+      //     firebase.database().ref('Invoices').on('value', function(snapshot){
+      //       snapshot.forEach(
+      //         function(ChildSnapshot){
+      //           let id = ChildSnapshot.val().id;
+      //           let status = ChildSnapshot.val().status;
+      //           let date = ChildSnapshot.val().date;
+      //           let orderTotal = ChildSnapshot.val().orderTotal;
+      //           let shippingAddress = ChildSnapshot.val().shippingAddress;
+      //           let pincode = ChildSnapshot.val().pincode;
+      //           addItemToDiv(id, status, date, orderTotal, shippingAddress, pincode);
+      //         }
+      //       );
+      //     });
+      //   }
+      //   window.onload(FetchAllData())
+
+        
+
+      //   function filterByMonth(){
+      //     var dateFrom = document.getElementById("dateFrom").value;
+      //     console.log(dateFrom);
+      //     var database = firebase.database();
+      //     var userRef = database.ref('Invoices');
+      //     userRef.orderByChild("date").equalTo(dateFrom).once('value', function(snapshot){
+      //       console.log(snapshot.val());
+      //     })
+      //   }
+
+      //   function filterByStatusPending(){
+      //     var database = firebase.database();
+      //     var userRef = database.ref('Invoices');
+      //     userRef.orderByChild("status").equalTo("pending").once('value', function(snapshot){
+      //       console.log(snapshot.val());
+      //     })
+      //   }
+      //   function filterByStatusCleared(){
+      //     console.log("Filter data by the date")
+      //     var database = firebase.database();
+      //     var userRef = database.ref('Invoices');
+      //     userRef.orderByChild("status").equalTo("cleared").once('value', function(snapshot){
+      //       console.log(snapshot.val());
+      //     })
+      //   }
+
+      //   function readingDData(){
+
+      //   }
+      // </script> -->
