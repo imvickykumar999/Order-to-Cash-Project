@@ -1,0 +1,175 @@
+{
+  "Hotel": {
+    "Database": {
+      "Customer": {
+        "imvickykumar999gmail": {
+          "isvip": "No",
+          "times": 1
+        },
+        "johnexample": {
+          "isvip": "No",
+          "times": 6
+        },
+        "somya_nagargmail": {
+          "isvip": "Yes",
+          "times": 1
+        },
+        "vicky_kumarneosalpha": {
+          "isvip": "No",
+          "times": 7
+        }
+      },
+      "Form": {
+        "1626": {
+          "Booking Date and Time": "2022-07-20 17:10:15",
+          "Email ID": "vicky_kumarneosalpha",
+          "Final Price": "10000.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 1
+        },
+        "1635": {
+          "Booking Date and Time": "2023-01-18 15:55:33",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "0.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 0
+        },
+        "3333": {
+          "Booking Date and Time": "2022-07-21 15:23:11",
+          "Customer ID": "johnexample",
+          "Email ID": "john@example.com",
+          "Final Price": "9910.00",
+          "First Name": "John M. Doe",
+          "Total Booked Room": 1
+        },
+        "4116": {
+          "Booking Date and Time": "2022-07-21 15:46:18",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "0.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 0
+        },
+        "4274": {
+          "Booking Date and Time": "2022-07-21 15:29:28",
+          "Customer ID": "imvickykumar999gmail",
+          "Email ID": "imvickykumar999@gmail.com",
+          "Final Price": "9818.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 1
+        },
+        "4336": {
+          "Booking Date and Time": "2022-07-21 15:45:37",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "9727.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 1
+        },
+        "4977": {
+          "Booking Date and Time": "2022-07-21 15:21:08",
+          "Customer ID": "johnexample",
+          "Email ID": "john@example.com",
+          "Final Price": "9910.00",
+          "First Name": "John M. Doe",
+          "Total Booked Room": 1
+        },
+        "6383": {
+          "Booking Date and Time": "2022-12-22 15:53:49",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "0.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 0
+        },
+        "6471": {
+          "Booking Date and Time": "2022-07-21 15:21:26",
+          "Customer ID": "johnexample",
+          "Email ID": "john@example.com",
+          "Final Price": "9818.00",
+          "First Name": "John M. Doe",
+          "Total Booked Room": 1
+        },
+        "8050": {
+          "Booking Date and Time": "2022-07-21 15:23:30",
+          "Customer ID": "johnexample",
+          "Email ID": "john@example.com",
+          "Final Price": "9632.00",
+          "First Name": "John M. Doe",
+          "Total Booked Room": 1
+        },
+        "8390": {
+          "Booking Date and Time": "2022-07-21 15:20:15",
+          "Customer ID": "johnexample",
+          "Email ID": "john@example.com",
+          "Final Price": "19820.00",
+          "First Name": "John M. Doe",
+          "Total Booked Room": 2
+        },
+        "8460": {
+          "Booking Date and Time": "2022-07-21 15:51:51",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "0.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 0
+        },
+        "9006": {
+          "Booking Date and Time": "2022-07-21 15:53:12",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "0.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 0
+        },
+        "9222": {
+          "Booking Date and Time": "2022-07-21 15:20:44",
+          "Customer ID": "johnexample",
+          "Email ID": "john@example.com",
+          "Final Price": "9910.00",
+          "First Name": "John M. Doe",
+          "Total Booked Room": 1
+        },
+        "9248": {
+          "Booking Date and Time": "2022-07-21 15:24:03",
+          "Customer ID": "somya_nagargmail",
+          "Email ID": "somya.nagar@gmail.com",
+          "Final Price": "9727.00",
+          "First Name": "Somya Nagar",
+          "Total Booked Room": 1
+        },
+        "9350": {
+          "Booking Date and Time": "2023-01-18 15:54:57",
+          "Customer ID": "vicky_kumarneosalpha",
+          "Email ID": "vicky.kumar@neosalpha.com",
+          "Final Price": "9742.00",
+          "First Name": "Vicky Kumar",
+          "Total Booked Room": 1
+        }
+      },
+      "Rooms": {
+        "room_1": "booked",
+        "room_10": "booked",
+        "room_11": "booked",
+        "room_12": "booked",
+        "room_13": "booked",
+        "room_14": "booked",
+        "room_15": "booked",
+        "room_16": "empty",
+        "room_17": "booked",
+        "room_18": "empty",
+        "room_19": "empty",
+        "room_2": "empty",
+        "room_20": "booked",
+        "room_3": "empty",
+        "room_4": "booked",
+        "room_5": "booked",
+        "room_6": "empty",
+        "room_7": "empty",
+        "room_8": "empty",
+        "room_9": "empty"
+      }
+    }
+  }
+}
