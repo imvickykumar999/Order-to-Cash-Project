@@ -110,7 +110,7 @@ def fetch_history(username):
     
     from account_tests import KhataBook_by_ID as kid
     obj = kid.flask_sheet()
-
+    
     for i in cust:
         obj.add_cust(f"{i} @ {cust[i]['location']['pin']}")
 
