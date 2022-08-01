@@ -12,7 +12,7 @@ numpy
 matplotlib
 tweepy
 click==6.7
-Flask-SQLAlchemy==2.3.2
+Flask-SQLAlchemy
 itsdangerous==0.24
 Jinja2==2.10
 SQLAlchemy
